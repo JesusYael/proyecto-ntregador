@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+      <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ADMIVO</title>
+	<!-- BOOTSTRAP STYLES-->
+    <link href="/static/bootstrap.css" rel="stylesheet" />
+     <!-- FONTAWESOME STYLES-->
+    <link href="/static/font-awesome.css" rel="stylesheet" />
+        <!-- CUSTOM STYLES-->
+    <link href="/static/custom.css" rel="stylesheet" />
+     <!-- GOOGLE FONTS-->
+   <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+</head>
+<body>
+     
+           
+          
+    <div id="wrapper">
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="adjust-nav">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#"><i class="fa fa-square-o "></i> ADMIVO</a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="/">Cerrar sesion</a></li>
+                    </ul>
+                </div>  
+            </div>
+        </div>
+        <!-- /. NAV TOP  -->
+        <nav class="navbar-default navbar-side" role="navigation">
+            <div class="sidebar-collapse">
+                <ul class="nav" id="main-menu">
+                    
+                    <li class="text-center user-image-back">
+                        <img src="/static/img/find_user.png" class="img-responsive" />
+                    </li>
+                    
+                    <li>
+                        <a href="/inicio"><i class="fa fa-desktop "></i>Tablero</a>
+                    </li>
+                    <li>
+                        <a href="unidades.html"><i class="fa fa-table "></i>Unidades<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href="/unidades">Agregar Unidad</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="operadores.html"><i class="fa fa-table "></i>Operadores<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href="/operadores">Agregar Operador</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="rutas.html"><i class="fa fa-table "></i>Rutas<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href="/rutas">Agregar Ruta</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="mantenimiento.html"><i class="fa fa-table "></i>Mantenimiento<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href="/mantenimiento">Asignación de Mantenimiento</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-table "></i>Bases<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href="/bases">Agregar Base</a>
+                            </li>
+                        </ul>
+                    </li>
+                    
+                </ul>
+
+            </div>
+
+        </nav>
+        <!-- /. NAV SIDE  -->
+        <div id="page-wrapper" style="align-items: center;">
+            <div id="page-inner">
+                <div class="row">
+                    <div class="col-md-12">
+                        <section>
+                            <div class="container" style="justify-content: center;">
+                              <div class="row justify-content-center">
+                                <div class="col-12 col-md-8 col-lg-8 col-xl-6">
+                                  <div class="row">
+                                    <div class="col text-left">
+                                      <h1>Nuevo Mantenimiento</h1>
+                                    </div>
+                                  </div>
+                                  <br>
+                                    <form action="" method="post">
+                                        <div class="row align-items-center">
+                                                <div class="col mt-4">
+                                                    <input type="text" class="form-control" placeholder="Unidad" required>
+                                                </div>
+                                        </div>
+                                        <br>
+                                        <div class="row align-items-center mt-4">
+                                                <div class="col">
+                                                    <input type="text" class="form-control" placeholder="Falla" required>
+                                                </div>
+                                        </div>
+                                        <br>
+                                        <div class="row align-items-center mt-4">
+                                                <div class="col">
+                                                    <input type="date" class="form-control" placeholder="Fecha de reparación" required>
+                                                </div>
+                                        </div>
+                                        <br>
+                                        <div class="row align-items-center mt-4">
+                                                <div class="col">
+                                                    <input type="number" class="form-control" placeholder="Costo" required>
+                                                </div>
+                                        </div>
+                                        <br>
+                                        <div class="row justify-content-start mt-4">
+                                            <div class="col">
+                                                <button class="btn btn-primary mt-4">Agregar</button> <button class="btn btn-primary mt-4">Guardar</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                    <br>
+                                    <div style="margin-left: auto;" class="col-md-8">
+                                        <h5>MANTENIMIENTO</h5>
+                                        <table class="table table-striped table-bordered table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th>Unidad</th>
+                                                    <th>Falla</th>
+                                                    <th>Fecha de Reparación</th>
+                                                    <th>Costo</th>
+                                                    <th>Acciones</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                            
+                                                    <td>45-3FG</td>
+                                                    <td>Motor</td>
+                                                    <td>10/04/2023</td>
+                                                    <td>1789</td>
+                                                    <td><li><a href="#">Editar</a></li><li><a href="#">Eliminar</a></li></td>
+                                                </tr>
+                                                
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                              </div>
+                            </div>
+                          </section>
+                    </div>
+                </div>              
+                 <!-- /. ROW  -->
+                  <hr />
+              
+                 <!-- /. ROW  -->           
+    </div>
+             <!-- /. PAGE INNER  -->
+            </div>
+         <!-- /. PAGE WRAPPER  -->
+        </div>
+     <!-- /. WRAPPER  -->
+    <!-- SCRIPTS -AT THE BOTOM TO REDUCE THE LOAD TIME-->
+    <!-- JQUERY SCRIPTS -->
+    <script src="/static/js/jquery-1.10.2.js"></script>
+      <!-- BOOTSTRAP SCRIPTS -->
+    <script src="/static/js/bootstrap.min.js"></script>
+    <!-- METISMENU SCRIPTS -->
+    <script src="/static/js/jquery.metisMenu.js"></script>
+      <!-- CUSTOM SCRIPTS -->
+    <script src="/static/js/custom.js"></script>
+    
+   
+</body>
+</html>

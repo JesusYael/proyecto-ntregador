@@ -1,0 +1,344 @@
+﻿$def with (datos)
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADMIVO</title>
+    <!-- BOOTSTRAP STYLES-->
+    <link rel="stylesheet" href="/static/bootstrap.css"  />
+    <link rel="stylesheet" href="/static/estilo.css"  />
+    <!-- FONTAWESOME STYLES-->
+    <link href="/static/font-awesome.css" rel="stylesheet" />
+    <!-- CUSTOM STYLES-->
+    <link href="/static/custom.css" rel="stylesheet" />
+    <!-- GOOGLE FONTS-->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+</head>
+<body>
+    <div id="wrapper">
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="adjust-nav">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#"><i class="fa fa-square-o "></i> ADMIVO</a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="/">Cerrar sesion</a></li>
+                    </ul>
+                </div>  
+            </div>
+        </div>
+        <!-- /. NAV TOP  -->
+        <nav class="navbar-default navbar-side" role="navigation">
+            <div class="sidebar-collapse">
+                <ul class="nav" id="main-menu">
+                    
+                    <li class="text-center user-image-back">
+                        <img src="/static/img/find_user.png" class="img-responsive" />
+                    </li>
+                    
+                    <li>
+                        <a href="index.html"><i class="fa fa-desktop "></i>Tablero</a>
+                    </li>
+                    <li>
+                        <a href="unidades.html"><i class="fa fa-table "></i>Unidades<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href="/unidades">Agregar Unidad</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="operadores.html"><i class="fa fa-table "></i>Operadores<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href="/operadores">Agregar Operador</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="rutas.html"><i class="fa fa-table "></i>Rutas<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href="/rutas">Agregar Ruta</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="mantenimiento.html"><i class="fa fa-table "></i>Mantenimiento<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href="/mantenimiento">Asignación de Mantenimiento</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-table "></i>Bases<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href="/bases">Agregar Base</a>
+                            </li>
+                        </ul>
+                    </li>
+            
+                </ul>
+
+            </div>
+
+        </nav>
+        <!-- /. NAV SIDE  -->
+        <div id="page-wrapper">
+            <div id="page-inner">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2>Tablero</h2>
+                    </div>
+                </div>
+                <!-- /. ROW  -->
+                <hr />
+                <div class="row">
+                    <div class="col-md-3 col-sm-3 col-xs-6">
+                        <h5>Ingresos Semanales</h5>
+                        <div class="panel panel-primary text-center no-boder bg-color-blue">
+                            <div class="panel-body">
+                                <i class="fa fa-bar-chart-o fa-5x"></i>
+                                <h3>3552</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-6">
+                        <h5>Ingresos Mensuales</h5>
+                        <div class="alert alert-info text-center">
+                            <i class="fa fa-desktop fa-5x"></i>
+                            <h3>4560 </h3>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        
+                        <br />
+                        <br />
+                        <h5>Estadísticas</h5>
+                        <div class="progress progress-striped">
+                            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+                                Ganacias
+                                <span class="sr-only"></span>
+                            </div>
+                        </div>
+                        <div class="progress progress-striped active">
+                            <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
+                                Perdidas
+                                <span class="sr-only">20% Complete</span>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                </div>
+                <!-- /. ROW  -->
+                <hr />
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label>Seleccionar Unidad</label>
+
+                            <select class="form-control">
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                            </select>
+                            
+                        </div>
+                        <label style="padding-bottom: -50px;">Número de Pasajeros</label>
+                        <input type="text" id="pasajeros" name="pasajeros" readonly>
+                        <br>
+                        <script>
+                            var pasajeros = new EventSource("https://tic51-adf3a-default-rtdb.firebaseio.com/prueba.json");
+                            pasajeros.addEventListener('put', function(e){
+                                var json = JSON.parse(e.data);
+                                console.log(json);
+                                if (json.path == "/"){
+                                  tbody = document.getElementById("tbody_sensores");
+                                    for (var key in json.data){
+                                        console.log(key);
+                                        console.log(json.data.Pasajeros);
+                                        document.getElementById("pasajeros").value = json.data.Pasajeros;
+                        
+                                    }
+                                }else{
+                                    s = json.path.split("/");
+                                    console.log(s[1]);
+                                    console.log(json.data);
+                                    document.getElementById(s[1]).value = json.data;
+                                }
+                        
+                            })
+                        </script>
+                        <label style="padding-bottom: -50px;">Ingresos</label>
+                        <h3>778</h3>
+                    
+                        <label>Ubicacion en tiempo real</label>
+                        <form method="POST" id="formulario">
+                            <input type="text" id="longitud" name="longitud" hidden>
+                            <br>
+                            <input type="text" id="latitud" name="latitud" hidden>
+                            <br>
+                            <input type="submit" value="UBICACION" target="_blank" class="btn btn-danger btn-lg btn-block">
+                            </form>
+                            <h1></h1>
+                            <script>
+                              var sensores = new EventSource("https://tic51-adf3a-default-rtdb.firebaseio.com/gps.json");
+                              sensores.addEventListener('put', function(e){
+                                  var json = JSON.parse(e.data);
+                                  console.log(json);
+                                  if (json.path == "/"){
+                                      tbody = document.getElementById("tbody_sensores");
+                                      for (var key in json.data){
+                                          console.log(key);
+                                          console.log(json.data.longitud);
+                                          console.log(json.data.latitud);
+                                          document.getElementById("latitud").value = json.data.latitud;
+                                          document.getElementById("longitud").value = json.data.longitud;
+                        
+                                      }
+                                  }else{
+                                      s = json.path.split("/");
+                                      console.log(s[1]);
+                                      console.log(json.data);
+                                      document.getElementById(s[1]).value = json.data;
+                                  }
+                        
+                              })
+                          </script>
+                        
+                    </div>
+                    
+                    
+                    <div class="col-md-7" style="margin-top: 0px;">
+                        <div class="map">
+                          <iframe width="100%" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="/mapa"></iframe><br><small></small>
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+                <hr />
+                <div class="row">
+                    
+                    <div class="col-md-6">
+                        <h5>Ingresos por Unidad</h5>
+                        <table class="table table-striped table-bordered table-hover">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Unidad</th>
+                                    <th>Ruta</th>
+                                    <th>Pasajeros</th>
+                                    <th>Ingresos</th>
+                                    
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>HDEF-9898</td>
+                                    <td>La Argentina</td>
+                                    <td>70</td>
+                                    <td>5756</td>
+                                </tr>
+                                
+                            </tbody>
+                        </table>
+
+                    </div>
+                    <div class="col-md-6">
+                        <h5>OPERADORES ASIGNADOS</h5>
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Apellido</th>
+                                        <th>Nombre</th>
+                                        <th>Unidad</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="success">
+                                        <td>1</td>
+                                        <td>Mark</td>
+                                        <td>Otto</td>
+                                        <td>mdo</td>
+                                    </tr>
+                                    <tr class="info">
+                                        <td>2</td>
+                                        <td>Jacob</td>
+                                        <td>Thornton</td>
+                                        <td>fat</td>
+                                    </tr>
+                                    <tr class="warning">
+                                        <td>3</td>
+                                        <td>Larry</td>
+                                        <td>the Bird</td>
+                                        <td>twitter</td>
+                                    </tr>
+                                    <tr class="danger">
+                                        <td>4</td>
+                                        <td>John</td>
+                                        <td>Smith</td>
+                                        <td>jsmith</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <!-- /. ROW  -->
+                <hr />
+                
+                <!-- /. ROW  -->
+                <!-- /. ROW  -->
+                <table class="opiniones">
+                    <thead>
+                      <tr>
+                        <th>Asunto</th>
+                        <th>Fecha</th>
+                        <th>Comentario</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                        $for clave in datos.keys():
+                        <tr>
+                          <td>$datos[clave]['asunto']</td>
+                          <td>$datos[clave]['fecha']</td>
+                          <td>$datos[clave]['mensaje']</td>
+                        </tr>
+                      </tbody>
+                  </table>
+
+            </div>
+            
+            <!-- /. PAGE INNER  -->
+        </div>
+        
+        <!-- /. PAGE WRAPPER  -->
+    </div>
+
+    <!-- /. WRAPPER  -->
+    <!-- SCRIPTS -AT THE BOTOM TO REDUCE THE LOAD TIME-->
+    <!-- JQUERY SCRIPTS -->
+    <script src="/static/js/jquery-1.10.2.js"></script>
+    <!-- BOOTSTRAP SCRIPTS -->
+    <script src="/static/js/bootstrap.min.js"></script>
+    <!-- METISMENU SCRIPTS -->
+    <script src="/static/js/jquery.metisMenu.js"></script>
+    <!-- CUSTOM SCRIPTS -->
+    <script src="/static/js/custom.js"></script>
+
+
+</body>
+</html>
